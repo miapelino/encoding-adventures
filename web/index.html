@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+    <title>Encoder</title>
+      <link rel="stylesheet" href="../src/style/main.css">
+    <script defer src="../src/index.js" charset="utf-8"></script>
+  </head>
+  <body onload="onLoad()">
+    <h1>Text Encoder and Decoder</h1>
+    <div>
+      <form name="form">
+          <fieldset>
+              <p>
+                  Guess what I learned this week?
+                  <br>
+                  <br>
+                  In JavaScript, there's only one data type for a number.
+                  <br>
+                  <br>
+                  So whether it's an integer, short, long, floating point number, doesn't matter. Apparently JavaScript
+                  numbers are always 64-bit floating point.
+                  <br>
+                  <br>
+                  <br>
+                  Which means that my beautiful integer encoding device below is only accurate up to 15 digits, whether I use the
+                  built in javascript function to convert, or my own function.
+              </p>
+            <label for="inputValue1">Stick in an integer below to be encoded. Anything over 15 digits is garbage:</label>
+          <br>
+            <input
+              id="inputValue1"
+              required pattern="[A-Fa-f0-9]+"
+            />
+          <br>
+             <select
+               id="dropDown"
+               onchange="buttonVisibility()">
+               <option value="decimalInteger" selected>decimal to hex</option>
+               <option value="encodedText">hex to decimal</option>
+             </select>
+              <br>
+                  <input
+                          type="button"
+                          id="int16"
+                          value="hex encoder"
+                          onclick="hexEncoder()"/>
+                  <input
+                          type="button"
+                          id="hex"
+                          value="hex decoder"
+                          onclick="decodeHex()"/>
+              <br>
+            <input
+                id="output1" />
+          <br>
+              <p>Here's a bonus special text encoder I've included for fun.</p>
+          <br>
+            <label for="inputValue2">Stick an integer below to be encoded:</label>
+          <br>
+            <input
+              id="inputValue2"
+              required pattern="[A-Fa-f0-9]+"
+            />
+              <br>
+            <input
+                type="button"
+                id="specEncode"
+                value="special encoder"
+                onclick="textEncoder()"/>
+            <br>
+            <input
+                id="output2" />
+          </fieldset>
+      </form>
+    </div>
+  </body>
+</html>
