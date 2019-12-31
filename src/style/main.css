@@ -1,0 +1,75 @@
+body {
+    font-family: helvetica, monospace;
+    text-align: center;
+    width: 90%;
+    padding: 8px 20px;
+    background-image: url('../../web/img/space.jpg');
+    background-size: cover;
+}
+
+h1 {
+    font-family: monospace;
+    text-align: center;
+    color: #84dcc6;
+
+}
+
+p {
+    padding: 20px 10px;
+    font-family: monospace;
+    text-align: justify;
+    size: 16px;
+    color: #84dcc6;
+}
+
+label {
+    color: #d6edff;
+}
+
+input {
+    padding: 8px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+input[type=text]:focus {
+    border: 2px solid #8b95c9;
+}
+
+input[type=button] {
+    border: 2px solid #8b95c9;
+    cursor: pointer;
+    background-color: #8b95c9;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+select option {
+    font-size: 12px;
+    padding: 12px;
+    border: none;
+    border-radius: 1px;
+    font-family: monospace;
+    background-color: #f1f1f1;
+}
+
+fieldset {
+    background-color: rgba(0,0,0,.6);
+    padding: 15px 30px;
+    border-radius: 6px;
+    border-color: aquamarine;
+}
+
+div {
+    margin: 20px 50px;
+    width: 90%;
+}
+div form {
+    display: inline-block;
+    text-align: center;
+}
+
+.inputValue:invalid {
+    border: 2px dashed red;
+}
