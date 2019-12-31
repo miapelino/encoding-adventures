@@ -3,28 +3,20 @@
   <head>
     <meta charset="utf-8" >
     <title>Encoder</title>
-      <link rel="stylesheet" href="../src/style/main.css">
-    <script defer src="../src/index.js" charset="utf-8"></script>
+      <link rel="stylesheet" href="resources/css/main.css">
+    <script defer src="resources/index.js" charset="utf-8"></script>
   </head>
-  <body onload="onLoad()">
+  <body onload="buttonVisibility()">
     <h1>Text Encoder and Decoder</h1>
     <div>
       <form name="form">
           <fieldset>
               <p>
-                  Guess what I learned this week?
-                  <br>
-                  <br>
-                  In JavaScript, there's only one data type for a number.
-                  <br>
-                  <br>
-                  So whether it's an integer, short, long, floating point number, doesn't matter. Apparently JavaScript
-                  numbers are always 64-bit floating point.
+                  In JavaScript, there are two data types for numbers - 64-bit floating point, or BigInt.
                   <br>
                   <br>
                   <br>
-                  Which means that my beautiful integer encoding device below is only accurate up to 15 digits, whether I use the
-                  built in javascript function to convert, or my own function.
+                  This hexadecimal converter is only accurate up to 15 digits.
               </p>
             <label for="inputValue1">Stick in an integer below to be encoded. Anything over 15 digits is garbage:</label>
           <br>
@@ -33,7 +25,9 @@
               required pattern="[A-Fa-f0-9]+"
             />
           <br>
-             <select
+              <label for="dropDown">Conversion type:</label>
+              <br>
+              <select
                id="dropDown"
                onchange="buttonVisibility()">
                <option value="decimalInteger" selected>decimal to hex</option>

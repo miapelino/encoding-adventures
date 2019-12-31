@@ -3,7 +3,7 @@ body {
     text-align: center;
     width: 90%;
     padding: 8px 20px;
-    background-image: url('../../web/img/space.jpg');
+    background-image: url('images/space.jpg');
     background-size: cover;
 }
 
