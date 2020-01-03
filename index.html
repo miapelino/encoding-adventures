@@ -10,62 +10,31 @@
     <h1>Text Encoder and Decoder</h1>
     <div>
       <form name="form">
-          <fieldset>
-              <p>
-                  In JavaScript, there are two data types for numbers - 64-bit floating point, or BigInt.
-                  <br>
-                  <br>
-                  <br>
-                  This hexadecimal converter is only accurate up to 15 digits.
-              </p>
-            <label for="inputValue1">Stick in an integer below to be encoded. Anything over 15 digits is garbage:</label>
+        <fieldset>
+          <p>
+            In JavaScript, there are two data types for numbers: number and BigInt.<br>
+            <br>Currently, BigInt is not supported in Safari, IE, or Edge.<br>
+            <br>Using the number (64-bit floating point) data type, this hexadecimal converter is only accurate up to 15 decimal digits.<br>
+            <br><hr>
+          </p>
+          <label for="inputValue1">Stick in an integer below to be encoded. Anything over 15 digits is garbage:</label>
           <br>
-            <input
-              id="inputValue1"
-              required pattern="[A-Fa-f0-9]+"
-            />
+          <input id="inputValue1" required pattern="[A-Fa-f0-9]+"/>
           <br>
-              <label for="dropDown">Conversion type:</label>
-              <br>
-              <select
-               id="dropDown"
-               onchange="buttonVisibility()">
-               <option value="decimalInteger" selected>decimal to hex</option>
-               <option value="encodedText">hex to decimal</option>
-             </select>
-              <br>
-                  <input
-                          type="button"
-                          id="int16"
-                          value="hex encoder"
-                          onclick="hexEncoder()"/>
-                  <input
-                          type="button"
-                          id="hex"
-                          value="hex decoder"
-                          onclick="decodeHex()"/>
-              <br>
-            <input
-                id="output1" />
           <br>
-              <p>Here's a bonus special text encoder I've included for fun.</p>
+          <label for="dropDown">Conversion type:</label>
           <br>
-            <label for="inputValue2">Stick an integer below to be encoded:</label>
           <br>
-            <input
-              id="inputValue2"
-              required pattern="[A-Fa-f0-9]+"
-            />
-              <br>
-            <input
-                type="button"
-                id="specEncode"
-                value="special encoder"
-                onclick="textEncoder()"/>
-            <br>
-            <input
-                id="output2" />
-          </fieldset>
+          <select id="dropDown" onchange="buttonVisibility()">
+            <option value="decToHex" selected>decimal to hex</option>
+            <option value="hexToDec">hex to decimal</option>
+          </select>
+          <br>
+          <br>
+          <input type="button" id="int16" value="hex encoder" onclick="decToHexEncoder()"/>
+          <br>
+          <h2 id="output1"></h2>
+        </fieldset>
       </form>
     </div>
   </body>
