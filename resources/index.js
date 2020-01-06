@@ -1,15 +1,28 @@
-let inputHex = document.getElementById('inputValue1');
-let outputHex = document.getElementById('output1');
+let input = document.getElementById('inputValue');
+let output = document.getElementById('output');
 let conversionType = document.getElementById('dropDown');
 
-function decToHexEncoder() {
-  outputHex.innerText = '';
-  outputHex.innerText = inputHex.value.toString().concat(' ------> ').concat(decToHex(parseInt(inputHex.value)).toString());
+function determineVisibility() {
+  let button = document.getElementById('submit');
+  button.value = 'submit';
+  conversionType.value === 'none'
+    ? button.style.visibility = 'hidden'
+    : button.style.visibility = 'visible';
 }
 
-function buttonVisibility() {
-  document.getElementById("int16").style.visibility = isDecimal();
-  document.getElementById("hex").style.visibility = isHex();
+function onSubmit() {
+  output.innerText = '';
+  conversionType.value === 'decToHex'
+    ? decToHexEncoder()
+    : hexToDecDecoder();
+}
+
+function decToHexEncoder () {
+  output.innerText = input.value.toString().concat(' ------> ').concat(decToHex(parseInt(input.value)).toString());
+}
+
+function hexToDecDecoder() {
+  output.innerText = input.value.toString().concat(' ------> ').concat(parseInt(input.value, 16).toString());
 }
 
 const decToHex = number => {
@@ -38,18 +51,6 @@ const formatHexadecimal = hexArray => {
   hexConversion.reverse();
   hexConversion.prototype = hexConversion;
   return hexConversion.join('');
-};
-
-const isDecimal = () => {
-  return conversionType.value === 'decToHex'
-    ?'visible'
-    :'collapse';
-};
-
-const isHex = () => {
-  return conversionType.value === 'hexToDec'
-    ?'visible'
-    :'collapse';
 };
 
 const symbolEquivalent = new Map(
