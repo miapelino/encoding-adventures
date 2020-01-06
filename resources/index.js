@@ -18,12 +18,19 @@ function onSubmit() {
 }
 
 function decToHexEncoder () {
-  output.innerText = input.value.toString().concat(' ------> ').concat(decToHex(parseInt(input.value)).toString());
+  output.innerText = input.value.toString().concat(' ------> ').concat('0x').concat(decToHex(parseInt(input.value)).toString());
 }
 
 function hexToDecDecoder() {
-  output.innerText = input.value.toString().concat(' ------> ').concat(parseInt(input.value, 16).toString());
+  let prefix = formattedPrefix();
+  output.innerText = prefix.concat(' ------> ').concat(parseInt(input.value, 16).toString());
 }
+
+const formattedPrefix = () => {
+  return input.value.slice(0,2).toUpperCase() === '0X'
+    ? '0x'.concat(input.value.slice(2).toUpperCase())
+    : '0x'.concat(input.value.toUpperCase());
+};
 
 const decToHex = number => {
   if(number < 16){
